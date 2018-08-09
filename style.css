@@ -1,0 +1,73 @@
+#top-container{
+    background-color:black
+    
+}
+h1{
+    text-align: center;
+    color:white;
+    
+}
+#firstSection{
+    border-bottom: white solid 3px;
+    padding-bottom: 2%;
+}
+
+body{
+    background-color: #B18871;
+}
+
+
+#about{
+    width: 47%;
+    float: left;
+    margin-left: 3%;
+    
+    
+    
+}
+#salmonPic{
+    width: 70%;
+}
+
+
+
+
+img{
+    width: 47%;
+    display: inline-block;
+    
+}
+
+/*#secondSection{
+    background-color:purple;
+}
+*/
+
+.lists{
+    display:inline-block; 
+    width: 14%;
+    margin: 0 1%;
+    padding: 2%;
+    margin-top: 7%;
+    box-sizing: border-box;
+    border: white solid 2px;
+    
+
+   
+}
+
+
+.lists h3{
+    font-size:1.2em;
+    text-align: center;
+}
+
+.lists li{
+    font-weight: bold;
+}
+ ul, li {
+    list-style: none;
+    margin:0;
+    padding:0;
+
+}

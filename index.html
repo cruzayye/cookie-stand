@@ -5,8 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cookie Stand</title>
+    <style>
+    </style>
+
+    <script>
+
+
+       /* var RandomCustomersNum = function (min,max){
+            Math.floor(Math.random()) * (max)
+        }*/
+
+        var randomGenerator = function(min, max, avgSale){
+                var random = Math.floor(Math.random()*(max)) + min;
+                var PerHourTotal = random * avgSale;
+                return parseInt(PerHourTotal);
+            }
+        
+
+        var pioneer ={
+            minCust: 17,
+            maxCust: 88,
+            avgSale: 5.2,
+            openHours: [ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm']
+            
+        } 
+
+        var PioneerAvg = randomGenerator(pioneer.minCust, pioneer.maxCust, pioneer.avgSale);
+        for( i = 0; i < pioneer.openHours.length; i++){
+            console.log(randomGenerator(pioneer.minCust, pioneer.maxCust, pioneer.avgSale));
+
+        }
+        
+
+
+    </script>
+
+
 </head>
 <body>
+    <div id='top-container'>
+    <h1>Salmon Cookies</h1>
+    </div>
+    
+    <section id='firstSection'>
+    <div id='about'>
+        <h2>The Only Fishy Cookies In Town</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <img id='salmonPic'src="imgs/salmon.png"/>
+    </div>
+    <img src="imgs/family.jpg"/>
+    </section>
+
+    
+    <section id='secondSection'>
+        <div class = 'lists'>
+            <h3>Pioneer Place</h3>
+            <ul>
+                <li>10am: 200</li>
+                <li>11am: 177</li>
+                <li>12pm: 232</li>
+                <li>1pm: 46</li>
+                <li>2pm: 55</li>
+                <li>3pm: 99</li>
+                <li>4pm: 100</li>
+                <li>5pm: 211</li>
+                <li>total: 1000+</li>
+                
+            </ul>
+        </div>
+
+        <div class = 'lists'>
+            <h3>Water Front</h3>
+            <ul>
+                <li>10am: 200</li>
+                <li>11am: 177</li>
+                <li>12pm: 232</li>
+                <li>1pm: 46</li>
+                <li>2pm: 55</li>
+                <li>3pm: 99</li>
+                <li>4pm: 100</li>
+                <li>5pm: 211</li>
+                <li>total: 1000+</li>
+                
+            </ul>
+        </div>
+
+        <div class = 'lists'>
+            <h3>Lloyd</h3>
+            <ul>
+                <li>10am: 200</li>
+                <li>11am: 177</li>
+                <li>12pm: 232</li>
+                <li>1pm: 46</li>
+                <li>2pm: 55</li>
+                <li>3pm: 99</li>
+                <li>4pm: 100</li>
+                <li>5pm: 211</li>
+                <li>total: 1000+</li>
+                
+            </ul>
+        </div>
+
+
+        <div class = 'lists'>
+            <h3>Alberta</h3>
+            <ul>
+                <li>10am:200</li>
+                <li>11am:177</li>
+                <li>12pm:232</li>
+                <li>1pm:46</li>
+                <li>2pm:55</li>
+                <li>3pm:99</li>
+                <li>4pm:100</li>
+                <li>5pm:211</li>
+                <li>total:1000+</li>
+
+            </ul>
+        </div>
+
+        <div class = 'lists'>
+            <h3>Tigard</h3>
+            <ul>
+                <li>10am:200</li>
+                <li>11am:177</li>
+                <li>12pm:232</li>
+                <li>1pm:46</li>
+                <li>2pm:55</li>
+                <li>3pm:99</li>
+                <li>4pm:100</li>
+                <li>5pm:211</li>
+                <li>total:1000+</li>
+
+            </ul>
+        </div>
+
+        <div class = 'lists'>
+            <h3>Beaverton</h3>
+            <ul>
+                <li>10am:200</li>
+                <li>11am:177</li>
+                <li>12pm:232</li>
+                <li>1pm:46</li>
+                <li>2pm:55</li>
+                <li>3pm:99</li>
+                <li>4pm:100</li>
+                <li>5pm:211</li>
+                <li>total:1000+</li>
+
+            </ul>
+        </div>
+    </section>
     
 </body>
 </html>
