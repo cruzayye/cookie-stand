@@ -1,19 +1,15 @@
 #top-container{
-    background-color:black
+    background-color: white;
     
 }
-h1{
-    text-align: center;
-    color:white;
-    
-}
+
 #firstSection{
     border-bottom: white solid 3px;
     padding-bottom: 2%;
 }
 
 body{
-    background-color: #B18871;
+    background-color: white;
 }
 
 
@@ -35,6 +31,7 @@ body{
 img{
     width: 47%;
     display: inline-block;
+    margin-top: .88em;
     
 }
 
@@ -71,3 +68,18 @@ img{
     padding:0;
 
 }
+
+
+
+<ul id="buzzwords">
+<h1>Salmon Cookies</h1>
+<li>
+Dilicious
+</li>
+<li>
+Dilicious
+</li>
+<li>
+Dilicious
+</li>
+</ul>
