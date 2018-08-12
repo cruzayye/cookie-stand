@@ -7,16 +7,22 @@
     <title>Cookie Stand</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
+        body{
 
-        nav{
-            background-color: #F88E1B;
+            margin: 0;
+            background-color: #FFDFC2;
+            
+        }
+
+
+        #nav{
+            margin-top: -3px;
+            
             
         }
         h1{
-            display: inline-block;
-            width: 50%;
-            margin-right: 30px;
-            margin-top: -50px;
+            text-align: left;
+            margin-left: 2%;
             
         }
         h3{
@@ -26,10 +32,97 @@
             display: inline-block;
         }
 
+        #tables{
+            border-top: white solid 2px;
+            
+        }
+
+        .opener{
+            height: 300px; 
+            
+            background-repeat:no-repeat;
+            background-position:center;
+            border-top: 2px solid #FFA24C;
+
+
+        }
+        
+
+         .opener h2{
+            font-size: 4em;
+            color: #FFA24C;
+            margin-bottom: 20px;
+            text-align: center;
+            
+
+        }
+
+        .opener p{
+            max-width: 50%;
+            margin: auto;
+            text-align: center;
+            padding: 2%;
+            
+
+           
+        }
+        .container{
+            max-width: 800px;
+            margin: auto;
+
+           
+        }
+
+
+
+        .fishies{
+            width: 250px;
+            height: 250px;
+            background-image: url(imgs/1fish.jpg);
+            background-repeat:no-repeat;
+            display: inline-block;
+            margin: 2px;
+            
+            
+
+
+
+
+        }
+
+        .midfish{
+            background-image: url(imgs/2fish.jpg);
+
+
+        }
+
+        .fishies h3{
+            font-size: 3em;
+            text-align: center;
+            padding-top: 100px;
+
+        }
+
+        #tables{
+            border-top: 2px solid #FFA24C;
+            margin-top: 2%;
+
+        }
+
+        #tables h2{
+            font-size: 2em;
+            margin-left: 2%;
+
+        }
+
+  
+
+
+
+
 
         
-        #buzzwords{
-        }
+
      
     </style>
 
@@ -42,13 +135,40 @@
 
 </head>
 <body>
-    <nav>
+    <div id="nav">
         <h1>Salmon Cookies</h1>
+    </div>
+
+    <div class="opener">
+        <h2 id="fishiest">
+            The Fishiest Cookies in town
+        </h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+    <!--need to find a way to center these divs and center teh h3 vertically-->
+
+    <div class= "container">
+        <div class= "fishies" >
+            <h3>Local</h3>
+
+        </div>
+
+        <div class= "fishies midfish">
+            <h3>Fresh</h3>
+
+        </div>
+
+        <div class= "fishies fish1">
+            <h3>Organic</h3>
+
+        </div>
+
+
+    </div>
+
         
-        <h3 class= "hype">Delicious</h3>
-        <h3 class= "hype">Delicious</h3>
-        <h3 class= "hype">Delicious</h3>
-    </nav>
+    
        
         
 
@@ -57,17 +177,21 @@
     
     
     
-    <section id='firstSection'>
+ <!-- 
+             <img id='salmonPic'src="imgs/salmon.png"/>
+ 
+     
     <div id='about'>
         <h2>The Only Fishy Cookies In Town</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <img id='salmonPic'src="imgs/salmon.png"/>
+
     </div>
     <img src="imgs/family.jpg"/>
-    </section>
+
+-->
+     <div id="tables">
+         <h2>Location & Hours</h2>
 
     
-    <section id='secondSection'>
         <div class = 'lists'>
             <h3>Pioneer Place</h3>
             <ul id="pioneer-list"></ul>
@@ -93,8 +217,8 @@
 
 
         <div class = 'lists'>
-            <h3 id="alberta">Alberta</h3>
-            <ul>
+            <h3 >Alberta</h3>
+            <ul id="alberta">
             </ul>
         </div>
 
@@ -102,7 +226,7 @@
 
         <div class = 'lists'>
             <h3>Tigard</h3>
-            <ul>
+            <ul id= "tigard">
             </ul>
         </div>
 
@@ -110,20 +234,11 @@
 
         <div class = 'lists'>
             <h3>Beaverton</h3>
-            <ul>
-                <li>10am:200</li>
-                <li>11am:177</li>
-                <li>12pm:232</li>
-                <li>1pm:46</li>
-                <li>2pm:55</li>
-                <li>3pm:99</li>
-                <li>4pm:100</li>
-                <li>5pm:211</li>
-                <li>total:1000+</li>
+            <ul id= "beaverton">
 
             </ul>
         </div>
-    </section>
+    </div>
     
     <script type="text/javascript" src="script.js"></script>
    

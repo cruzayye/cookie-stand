@@ -1,7 +1,4 @@
-#top-container{
-    background-color: white;
-    
-}
+
 
 #firstSection{
     border-bottom: white solid 3px;
@@ -45,9 +42,10 @@ img{
     width: 14%;
     margin: 0 1%;
     padding: 2%;
-    margin-top: 7%;
     box-sizing: border-box;
-    border: white solid 2px;
+    border: #FFA24C solid 2px;
+    margin-bottom: 2%;
+    background-color: #FFF8F1;
     
 
    
@@ -56,7 +54,9 @@ img{
 
 .lists h3{
     font-size:1.2em;
-    text-align: center;
+    text-align: left;
+    border-bottom: #FFA24C solid 1px;
+    margin-bottom: 5px;
 }
 
 .lists li{
@@ -71,15 +71,4 @@ img{
 
 
 
-<ul id="buzzwords">
-<h1>Salmon Cookies</h1>
-<li>
-Dilicious
-</li>
-<li>
-Dilicious
-</li>
-<li>
-Dilicious
-</li>
-</ul>
+
