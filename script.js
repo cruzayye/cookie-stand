@@ -14,44 +14,121 @@
         totalCookies: 0,
         openHours: [ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm' ],
         //this adds up the array and prints the total
-        totalPrint: function(){
-            var total = document.getElementById('pioneer-list');
-            
-            total.innerHTML += '<li>'+ 'total: ' + pioneer.totalCookies +'<li>'
 
+ 
+       //
+
+ 
+        header: function(){
+            /*            var list = document.getElementById('list')
+            var listItem =  document.createElement('a')
+            lititem.setAttribut('href', '#')
+            listItem.innerText = "new course"
+            list.appendChild(listItem)
+            */
+            var table = document.getElementById('pioneer-list');
+            var row = document.createElement("tr");
+            var heading = document.createElement("th");
+            heading.setAttribute("colspan", "2");
+            heading.innerText= "Pioneer place";
+            row.appendChild(heading);
+            table.appendChild(row);
+            
+                        //need to append a row for times 
+            
+            
+                        
+                        //total.innerHTML += '<li>'+ 'total: ' + pioneer.totalCookies +'<li>'
+            
         },
+        tableHours: function(){
+            for( i = 0; i < pioneer.openHours.length; i++){
+                var table = document.getElementById('pioneer-list');
+                var row = document.createElement("tr");
+                var hour = document.createElement("td");
+                table.appendChild(row);
+                hour.innerText= pioneer.openHours[i];
+                row.appendChild(hour);
+                //cookies per hour
+                var cookiesPerHour  = randomGenerator(pioneer.minCust, pioneer.maxCust, pioneer.avgSale);
+                pioneer.totalCookies += cookiesPerHour;
+                var totalCookies = document.createElement("td");
+                totalCookies.innerText = cookiesPerHour;
+                row.appendChild(totalCookies);
+
+                
+                    } 
+                
+                },
+        totalrow: function(){
+            var table = document.getElementById('pioneer-list');
+            var row = document.createElement("tr");
+            var total = document.createElement("td");
+            table.appendChild(row);
+            total.innerText ='total';
+            row.appendChild(total);
+            //
+
+
+            var totalCookies = document.createElement("td");
+            totalCookies.innerText = pioneer.totalCookies;
+            row.appendChild(totalCookies);
+
+
+
+        }
+        
+    } 
+    pioneer.header();
+    pioneer.tableHours();
+    pioneer.totalrow();
+                //totalCookies.innerText= pioneer.totalCookies;
+
+
+     
+
+
+
+
+
+
+
+  
+               
+            
+            
+            
         //gets teh TOTAL FROM the array, adding each number up
-       toHTML: function() {
+      /* toHTML: function() {
            var cookiesPerHour  = randomGenerator(pioneer.minCust, pioneer.maxCust, pioneer.avgSale) 
            pioneer.totalCookies += cookiesPerHour;
            console.log(pioneer.totalCookies);
            return '<li>' + pioneer.openHours[i] + ': ' + cookiesPerHour +  '</li>';
-      },
+           pioneerList: function(){
+             var list = document.getElementById('pioneer-list');
+             for( i = 0; i < pioneer.openHours.length; i++){
+                 //var perHour = (randomGenerator(pioneer.minCust, pioneer.maxCust, pioneer.avgSale));
+                 list.innerHTML += pioneer.toHTML();
+                 //console.log(pioneer.openHours[i]);
+                 
+         
+         
+         
+         
+             } 
+         
+         }
+      },*/
 
       //
-      pioneerList: function(){
-        var list = document.getElementById('pioneer-list');
-        for( i = 0; i < pioneer.openHours.length; i++){
-            //var perHour = (randomGenerator(pioneer.minCust, pioneer.maxCust, pioneer.avgSale));
-            list.innerHTML += pioneer.toHTML();
-            //console.log(pioneer.openHours[i]);
-            
-    
-    
-    
-    
-        } 
-    
-    }
-  } 
-    pioneer.pioneerList();
-    pioneer.totalPrint();
+   // pioneer.pioneerList();
+  // pioneer.cookiesPerHour();
            
 
 
 
     
-
+/*
     var waterFront ={
         minCust: 6,
         maxCust: 24,
@@ -246,7 +323,7 @@
 
 
 
-    
+    */
     
 
 
