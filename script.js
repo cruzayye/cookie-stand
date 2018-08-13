@@ -13,19 +13,8 @@
         avgSale: 5.2,
         totalCookies: 0,
         openHours: [ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm' ],
-        //this adds up the array and prints the total
 
- 
-       //
-
- 
         header: function(){
-            /*            var list = document.getElementById('list')
-            var listItem =  document.createElement('a')
-            lititem.setAttribut('href', '#')
-            listItem.innerText = "new course"
-            list.appendChild(listItem)
-            */
             var table = document.getElementById('pioneer-list');
             var row = document.createElement("tr");
             var heading = document.createElement("th");
@@ -33,12 +22,6 @@
             heading.innerText= "Pioneer place";
             row.appendChild(heading);
             table.appendChild(row);
-            
-                        //need to append a row for times 
-            
-            
-                        
-                        //total.innerHTML += '<li>'+ 'total: ' + pioneer.totalCookies +'<li>'
             
         },
         tableHours: function(){
@@ -82,8 +65,334 @@
     pioneer.header();
     pioneer.tableHours();
     pioneer.totalrow();
-                //totalCookies.innerText= pioneer.totalCookies;
 
+    var waterfront ={
+        minCust: 6,
+        maxCust: 24,
+        avgSale: 1.2,
+        totalCookies: 0,
+        openHours: [ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm' ],
+
+        header: function(){
+            var table = document.getElementById('waterfront');
+            var row = document.createElement("tr");
+            var heading = document.createElement("th");
+            heading.setAttribute("colspan", "2");
+            heading.innerText= "Waterfront";
+            row.appendChild(heading);
+            table.appendChild(row);
+            
+        },
+        tableHours: function(){
+            for( i = 0; i < waterfront.openHours.length; i++){
+                var table = document.getElementById('waterfront');
+                var row = document.createElement("tr");
+                var hour = document.createElement("td");
+                table.appendChild(row);
+                hour.innerText= waterfront.openHours[i];
+                row.appendChild(hour);
+                //cookies per hour
+                var cookiesPerHour  = randomGenerator(waterfront.minCust, waterfront.maxCust, waterfront.avgSale);
+                waterfront.totalCookies += cookiesPerHour;
+                var totalCookies = document.createElement("td");
+                totalCookies.innerText = cookiesPerHour;
+                row.appendChild(totalCookies);
+
+                
+                    } 
+                
+                },
+        totalrow: function(){
+            var table = document.getElementById('waterfront');
+            var row = document.createElement("tr");
+            var total = document.createElement("td");
+            table.appendChild(row);
+            total.innerText ='total';
+            row.appendChild(total);
+            //
+
+
+            var totalCookies = document.createElement("td");
+            totalCookies.innerText = pioneer.totalCookies;
+            row.appendChild(totalCookies);
+
+
+
+        }
+        
+    } 
+    waterfront.header();
+    waterfront.tableHours();
+    waterfront.totalrow();
+    
+    
+    var lloyd ={
+        minCust: 6,
+        maxCust: 24,
+        avgSale: 1.2,
+        totalCookies: 0,
+        openHours: [ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm' ],
+
+        header: function(){
+            var table = document.getElementById('lloyd');
+            var row = document.createElement("tr");
+            var heading = document.createElement("th");
+            heading.setAttribute("colspan", "2");
+            heading.innerText= "lloyd";
+            row.appendChild(heading);
+            table.appendChild(row);
+            
+        },
+        tableHours: function(){
+            for( i = 0; i < lloyd.openHours.length; i++){
+                var table = document.getElementById('lloyd');
+                var row = document.createElement("tr");
+                var hour = document.createElement("td");
+                table.appendChild(row);
+                hour.innerText= lloyd.openHours[i];
+                row.appendChild(hour);
+                //cookies per hour
+                var cookiesPerHour  = randomGenerator(lloyd.minCust, lloyd.maxCust, lloyd.avgSale);
+                lloyd.totalCookies += cookiesPerHour;
+                var totalCookies = document.createElement("td");
+                totalCookies.innerText = cookiesPerHour;
+                row.appendChild(totalCookies);
+
+                
+                    } 
+                
+                },
+        totalrow: function(){
+            var table = document.getElementById('lloyd');
+            var row = document.createElement("tr");
+            var total = document.createElement("td");
+            table.appendChild(row);
+            total.innerText ='total';
+            row.appendChild(total);
+            //
+
+
+            var totalCookies = document.createElement("td");
+            totalCookies.innerText = pioneer.totalCookies;
+            row.appendChild(totalCookies);
+
+
+
+        }
+        
+    } 
+    lloyd.header();
+    lloyd.tableHours();
+    lloyd.totalrow();
+
+
+
+    var alberta={
+        minCust: 6,
+        maxCust: 24,
+        avgSale: 1.2,
+        totalCookies: 0,
+        openHours: [ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm' ],
+
+        header: function(){
+            var table = document.getElementById('alberta');
+            var row = document.createElement("tr");
+            var heading = document.createElement("th");
+            heading.setAttribute("colspan", "2");
+            heading.innerText= "alberta";
+            row.appendChild(heading);
+            table.appendChild(row);
+            
+        },
+        tableHours: function(){
+            for( i = 0; i < alberta.openHours.length; i++){
+                var table = document.getElementById('alberta');
+                var row = document.createElement("tr");
+                var hour = document.createElement("td");
+                table.appendChild(row);
+                hour.innerText= alberta.openHours[i];
+                row.appendChild(hour);
+                //cookies per hour
+                var cookiesPerHour  = randomGenerator(alberta.minCust, alberta.maxCust, alberta.avgSale);
+                alberta.totalCookies += cookiesPerHour;
+                var totalCookies = document.createElement("td");
+                totalCookies.innerText = cookiesPerHour;
+                row.appendChild(totalCookies);
+
+                
+                    } 
+                
+                },
+        totalrow: function(){
+            var table = document.getElementById('alberta');
+            var row = document.createElement("tr");
+            var total = document.createElement("td");
+            table.appendChild(row);
+            total.innerText ='total';
+            row.appendChild(total);
+            //
+
+
+            var totalCookies = document.createElement("td");
+            totalCookies.innerText = pioneer.totalCookies;
+            row.appendChild(totalCookies);
+
+
+
+        }
+        
+    } 
+    alberta.header();
+    alberta.tableHours();
+    alberta.totalrow();
+    
+    var tigard={
+        minCust: 6,
+        maxCust: 24,
+        avgSale: 1.2,
+        totalCookies: 0,
+        openHours: [ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm' ],
+
+        header: function(){
+            var table = document.getElementById('tigard');
+            var row = document.createElement("tr");
+            var heading = document.createElement("th");
+            heading.setAttribute("colspan", "2");
+            heading.innerText= "tigard";
+            row.appendChild(heading);
+            table.appendChild(row);
+            
+        },
+        tableHours: function(){
+            for( i = 0; i < tigard.openHours.length; i++){
+                var table = document.getElementById('tigard');
+                var row = document.createElement("tr");
+                var hour = document.createElement("td");
+                table.appendChild(row);
+                hour.innerText= tigard.openHours[i];
+                row.appendChild(hour);
+                //cookies per hour
+                var cookiesPerHour  = randomGenerator(tigard.minCust, tigard.maxCust, tigard.avgSale);
+                tigard.totalCookies += cookiesPerHour;
+                var totalCookies = document.createElement("td");
+                totalCookies.innerText = cookiesPerHour;
+                row.appendChild(totalCookies);
+
+                
+                    } 
+                
+                },
+        totalrow: function(){
+            var table = document.getElementById('tigard');
+            var row = document.createElement("tr");
+            var total = document.createElement("td");
+            table.appendChild(row);
+            total.innerText ='total';
+            row.appendChild(total);
+            //
+
+
+            var totalCookies = document.createElement("td");
+            totalCookies.innerText = pioneer.totalCookies;
+            row.appendChild(totalCookies);
+
+
+
+        }
+        
+    } 
+    tigard.header();
+    tigard.tableHours();
+    tigard.totalrow();
+    
+    var beaverton ={
+        minCust: 6,
+        maxCust: 24,
+        avgSale: 1.2,
+        totalCookies: 0,
+        openHours: [ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm' ],
+
+        header: function(){
+            var table = document.getElementById('beaverton');
+            var row = document.createElement("tr");
+            var heading = document.createElement("th");
+            heading.setAttribute("colspan", "2");
+            heading.innerText= "beaverton";
+            row.appendChild(heading);
+            table.appendChild(row);
+            
+        },
+        tableHours: function(){
+            for( i = 0; i < beaverton.openHours.length; i++){
+                var table = document.getElementById('beaverton');
+                var row = document.createElement("tr");
+                var hour = document.createElement("td");
+                table.appendChild(row);
+                hour.innerText= beaverton.openHours[i];
+                row.appendChild(hour);
+                //cookies per hour
+                var cookiesPerHour  = randomGenerator(beaverton.minCust, beaverton.maxCust, beaverton.avgSale);
+                beaverton.totalCookies += cookiesPerHour;
+                var totalCookies = document.createElement("td");
+                totalCookies.innerText = cookiesPerHour;
+                row.appendChild(totalCookies);
+
+                
+                    } 
+                
+                },
+        totalrow: function(){
+            var table = document.getElementById('beaverton');
+            var row = document.createElement("tr");
+            var total = document.createElement("td");
+            table.appendChild(row);
+            total.innerText ='total';
+            row.appendChild(total);
+            //
+
+
+            var totalCookies = document.createElement("td");
+            totalCookies.innerText = pioneer.totalCookies;
+            row.appendChild(totalCookies);
+
+
+
+        }
+        
+    } 
+    beaverton.header();
+    beaverton.tableHours();
+    beaverton.totalrow();
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    //=========================previous code====================================
+            
+
+            
+            
+                        
+
+
+ 
 
      
 

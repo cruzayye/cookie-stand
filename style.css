@@ -1,13 +1,44 @@
 
 
+body{
+    background-color: #FFDFC2;
+    margin:0;
+}
+
+nav{
+    background-color: #FFF8F1;
+    margin: 0;
+    margin-bottom: 2%;
+    height: 75px;
+    border-bottom: 2px solid #FFA24C;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    box-sizing: border-box;
+
+    
+    
+}
+
+h1{
+    text-align: left;
+    margin-left: 2%;
+    font-family: 'Do Hyeon', sans-serif;
+    margin-top: 0;
+    display: inline-block;
+    margin-right: 50%;
+    
+}
+nav a{
+    padding-right: 2%;
+    font-family: 'do hyeon';
+    font-size: 1.2em;
+    text-decoration: none;
+}
 #firstSection{
     border-bottom: white solid 3px;
     padding-bottom: 2%;
 }
 
-body{
-    background-color: white;
-}
 
 
 #about{
@@ -19,15 +50,6 @@ body{
     
 }
 
-
-
-
-
-
-/*#secondSection{
-    background-color:purple;
-}
-*/
 
 .lists{
     display:inline-block; 
@@ -60,6 +82,99 @@ body{
     padding:0;
 
 }
+
+/*-----------------------SECTION 1------------------*/
+
+
+        
+
+.opener h2{
+    font-size: 4em;
+    color: #FFA24C;
+    text-align: center;
+    font-family: 'Do Hyeon', sans-serif;
+    margin: 0;
+
+    
+
+}
+
+.opener p{
+    max-width: 50%;
+    margin: auto;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+
+    
+
+   
+}
+.container{
+    max-width: 800px;
+    margin: auto;
+
+   
+}
+
+
+
+.fishies{
+    width: 250px;
+    height: 250px;
+    background-image: url(imgs/1fish.jpg);
+    background-repeat:no-repeat;
+    display: inline-block;
+    margin: 2px;
+    
+    
+
+
+
+
+}
+
+.midfish{
+    background-image: url(imgs/2fish.jpg);
+
+
+}
+
+.fishies h3{
+    font-size: 3em;
+    text-align: center;
+    padding-top: 100px;
+
+}
+
+
+
+/*--------------tables------*/
+#tables{
+    border-top: 2px solid #FFA24C;
+    margin-top: 2%;
+
+}
+
+
+
+table{
+    width: 13%;
+    display: inline-block;
+    border-color:#FFA24C;
+}
+
+table th{
+    font-size: 2em;
+    color: #FFA24C;
+    
+    
+}
+
+section:nth-of-type(2) {
+   margin: 2% 0;
+   background-color: #FFF8F1;
+}
+
 
 
 
