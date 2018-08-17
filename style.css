@@ -19,6 +19,10 @@ nav{
     
 }
 
+
+
+
+
 h1{
     text-align: left;
     margin-left: 2%;
@@ -36,7 +40,6 @@ nav a{
 }
 #firstSection{
     border-bottom: white solid 3px;
-    padding-bottom: 2%;
 }
 
 
@@ -51,37 +54,9 @@ nav a{
 }
 
 
-.lists{
-    display:inline-block; 
-    width: 14%;
-    margin: 0 1%;
-    padding: 2%;
-    box-sizing: border-box;
-    border: #FFA24C solid 2px;
-    margin-bottom: 2%;
-    background-color: #FFF8F1;
-    
-
-   
-}
 
 
-.lists h3{
-    font-size:1.2em;
-    text-align: left;
-    border-bottom: #FFA24C solid 1px;
-    margin-bottom: 5px;
-}
 
-.lists li{
-    font-weight: bold;
-}
- ul, li {
-    list-style: none;
-    margin:0;
-    padding:0;
-
-}
 
 /*-----------------------SECTION 1------------------*/
 
@@ -89,7 +64,7 @@ nav a{
         
 
 .opener h2{
-    font-size: 4em;
+    font-size: 3em;
     color: #FFA24C;
     text-align: center;
     font-family: 'Do Hyeon', sans-serif;
@@ -99,19 +74,20 @@ nav a{
 
 }
 
-.opener p{
+ p{
     max-width: 50%;
     margin: auto;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
+
 
     
 
    
 }
 .container{
-    max-width: 800px;
-    margin: auto;
+    text-align: center;
+
 
    
 }
@@ -125,6 +101,7 @@ nav a{
     background-repeat:no-repeat;
     display: inline-block;
     margin: 2px;
+    margin-top: 2%;
     
     
 
@@ -139,28 +116,47 @@ nav a{
 
 }
 
-.fishies {
+h3.fishies {
     font-size: 3em;
     text-align: center;
     padding-top: 100px;
+    font-family: 'Open+Sans';
+    color: white;
 
 }
 
 
 
 /*--------------tables------*/
-#tables{
-    border-top: 2px solid #FFA24C;
-    margin-top: 2%;
 
-}
+
+
+
 
 
 
 table{
     width: 13%;
-    display: inline-block;
+    display: inline-table;
     border-color:#FFA24C;
+    padding: 1%;
+    background-color:#FFA24C;
+    margin: 2% 1%;
+    border-spacing: 0;
+}
+
+ th{
+    background-color: white
+}
+
+tr:nth-of-type(even){
+    background-color: #FFDFC2;
+}
+
+
+
+tr:nth-of-type(odd){
+    background-color: white;
 }
 
 /* table th{
@@ -171,8 +167,52 @@ table{
 } */
 
 section:nth-of-type(2) {
-   margin: 2% 0;
+   margin-top: -3%;
    background-color: #FFF8F1;
+}
+
+/*--------------Shop------*/
+
+.shop-container{
+    max-width: 90%;
+    margin: auto;
+}
+
+
+h2.shop{
+    /* background-image:url(imgs/salmon.png);
+    background-repeat: no-repeat;
+    background-position: center; */
+    font-size: 3em;
+    color: #FFA24C;
+    text-align: center;
+    font-family: 'Do Hyeon', sans-serif;
+    margin-bottom: 1%;
+}
+
+
+
+
+
+figcaption{
+    margin-bottom: 2%;
+}
+figure{
+    width: 300px;
+    float: left;
+    margin: 2%;
+    font-size: 2.5em;
+    font-family: 'open sans', sans-serif;
+    font-style: italic;
+    color: #FFA24C;
+    
+    
+}
+
+
+
+figure:nth-of-type(3) img {
+    background-color: white;
 }
 
 

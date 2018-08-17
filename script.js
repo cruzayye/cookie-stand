@@ -18,7 +18,7 @@ var Store = function(storeName, minCust, maxCust, avgSale, totalCookies) {
         var row = document.createElement("tr");
         var heading = document.createElement("th");
         heading.setAttribute("colspan", "2");
-        heading.innerText= "Pioneer place";
+        heading.innerText= (storeName);
         row.appendChild(heading);
         table.appendChild(row);
         
@@ -67,17 +67,64 @@ var Store = function(storeName, minCust, maxCust, avgSale, totalCookies) {
 
 var stores =[];
 //this is a new object
-var pioneer = new Store('pioneer', 13, 33, 4.4, 0);
-console.log(pioneer);
+stores.push(new Store('pioneer', 13, 33, 4.4, 0));
+stores.push(new Store('waterfront', 6, 24, 1.2, 0));
+stores.push(new Store('tigard', 20, 48, 3.3, 0));
+stores.push(new Store('beaverton', 3, 24, 2.6, 0));
+stores.push(new Store('alberta', 20, 48, 3.3, 0));
+stores.push(new Store('lloyd', 20, 48, 3.3, 0));
 //calling the function within new object
-pioneer.header('pioneer');
-pioneer.tableHours('pioneer');
-pioneer.totalrow('pioneer');
+console.log(stores)
+
+var callId= function(storeObject){
+    console.log(storeObject);
+    storeObject.header(storeObject.store);
+
+    storeObject.tableHours(storeObject.store);
+    storeObject.totalrow(storeObject.store);
+
+}
+
+callId(stores[0]);
+callId(stores[1]);
+callId(stores[2]);
+callId(stores[3]);
+callId(stores[4]);
+callId(stores[5]);
 
 
 
-    
-    
+//before creating linese 79-93 we had the below code to call out each section of the table now we are using the 
+//push method in the array. 
+
+// for(i = 0; i < stores.length; i++){
+//    callId(stores[i]);
+// }
+
+
+// pioneer.header('pioneer');
+// pioneer.tableHours('pioneer');
+// pioneer.totalrow('pioneer');
+
+// tigard.header('tigard');
+// tigard.tableHours('tigard');
+// tigard.totalrow('tigard');
+
+// waterfront.header('waterfront');
+// waterfront.tableHours('waterfront');
+// waterfront.totalrow('waterfront');
+
+// beaverton.header('beaverton');
+// beaverton.tableHours('beaverton');
+// beaverton.totalrow('beaverton');
+
+// alberta.header('alberta');
+// alberta.tableHours('alberta');
+// alberta.totalrow('alberta');
+
+// lloyd.header('lloyd');
+// lloyd.tableHours('lloyd');
+// lloyd.totalrow('lloyd');
 
 
 
