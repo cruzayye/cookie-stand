@@ -8,7 +8,7 @@ var randomGenerator = function(min, max, avgSale){
 openHours =[ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm' ]
 
 var Store = function(storeName, minCust, maxCust, avgSale, totalCookies) {
-    this.store = storeName;
+    this.store = storeName;//parameters dont get called until new objects get created. 
     this.min = minCust;
     this.max = maxCust;
     this.avg = avgSale;
@@ -25,6 +25,7 @@ var Store = function(storeName, minCust, maxCust, avgSale, totalCookies) {
     };
     this.tableHours = function(tableId){
         for( i = 0; i < openHours.length; i++){
+            //first were looping through hours array to create a column
             var table = document.getElementById(tableId);
             var row = document.createElement("tr");
             var hour = document.createElement("td");

@@ -5,6 +5,13 @@ body{
     margin:0;
 }
 
+nav img {
+    margin-right: 50%;
+    margin-left: 2%;
+    margin-top: -1%;
+
+}
+
 nav{
     background-color: #FFF8F1;
     margin: 0;
@@ -37,6 +44,7 @@ nav a{
     font-family: 'do hyeon';
     font-size: 1.2em;
     text-decoration: none;
+    color: #FFA24C; 
 }
 #firstSection{
     border-bottom: white solid 3px;
@@ -60,8 +68,17 @@ nav a{
 
 /*-----------------------SECTION 1------------------*/
 
+.section-1{
+    border-right: 2px solid white;
+}
 
-        
+
+.opener{
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  width: 70%;
+  margin: auto;
+}    
 
 .opener h2{
     font-size: 3em;
@@ -146,7 +163,13 @@ table{
 }
 
  th{
-    background-color: white
+    background-color: white;
+    font-family: 'Do Hyeon', sans-serif; 
+}
+
+td{
+    font-family:'Open Sans', sans-serif;
+    
 }
 
 tr:nth-of-type(even){
@@ -176,6 +199,7 @@ section:nth-of-type(2) {
 .shop-container{
     max-width: 90%;
     margin: auto;
+    text-align: center;
 }
 
 
@@ -200,9 +224,8 @@ figcaption{
 figure{
     width: 300px;
     float: left;
-    margin: 2%;
     font-size: 2.5em;
-    font-family: 'open sans', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
     font-style: italic;
     color: #FFA24C;
     
