@@ -1,51 +1,51 @@
 
-var randomGenerator = function(min, max, avgSale){
-    var random = Math.floor(Math.random()*(max)) + min;
+var randomGenerator = function (min, max, avgSale) {
+    var random = Math.floor(Math.random() * (max)) + min;
     var PerHourTotal = random * avgSale;
     return parseInt(PerHourTotal);
 }
 
-openHours =[ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm' ]
+openHours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm']
 
-var Store = function(storeName, minCust, maxCust, avgSale, totalCookies) {
+var Store = function (storeName, minCust, maxCust, avgSale, totalCookies) {
     this.store = storeName;//parameters dont get called until new objects get created. 
     this.min = minCust;
     this.max = maxCust;
     this.avg = avgSale;
     this.total = totalCookies;
-    this.header = function(tableId){
+    this.header = function (tableId) {
         var table = document.getElementById(tableId);
         var row = document.createElement("tr");
         var heading = document.createElement("th");
         heading.setAttribute("colspan", "2");
-        heading.innerText= (storeName);
+        heading.innerText = (storeName);
         row.appendChild(heading);
         table.appendChild(row);
-        
+
     };
-    this.tableHours = function(tableId){
-        for( i = 0; i < openHours.length; i++){
+    this.tableHours = function (tableId) {
+        for (i = 0; i < openHours.length; i++) {
             //first were looping through hours array to create a column
             var table = document.getElementById(tableId);
             var row = document.createElement("tr");
             var hour = document.createElement("td");
             table.appendChild(row);
-            hour.innerText= openHours[i];
+            hour.innerText = openHours[i];
             row.appendChild(hour);
             //cookies per hour
-            var cookiesPerHour  = randomGenerator(this.min, this.max, this.avg);
+            var cookiesPerHour = randomGenerator(this.min, this.max, this.avg);
             this.total += cookiesPerHour;
             var totalCookies = document.createElement("td");
             totalCookies.innerText = cookiesPerHour;
             row.appendChild(totalCookies);
         }
     };
-    this.totalrow = function(tableId){
+    this.totalrow = function (tableId) {
         var table = document.getElementById(tableId);
         var row = document.createElement("tr");
         var total = document.createElement("td");
         table.appendChild(row);
-        total.innerText ='total';
+        total.innerText = 'total';
         row.appendChild(total);
         //
 
@@ -60,13 +60,13 @@ var Store = function(storeName, minCust, maxCust, avgSale, totalCookies) {
 
 }
 
-            
-                
-
-    
 
 
-var stores =[];
+
+
+
+
+var stores = [];
 //this is a new object
 stores.push(new Store('pioneer', 13, 33, 4.4, 0));
 stores.push(new Store('waterfront', 6, 24, 1.2, 0));
@@ -77,7 +77,7 @@ stores.push(new Store('lloyd', 20, 48, 3.3, 0));
 //calling the function within new object
 console.log(stores)
 
-var callId= function(storeObject){
+var callId = function (storeObject) {
     console.log(storeObject);
     storeObject.header(storeObject.store);
 
