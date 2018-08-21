@@ -1,93 +1,78 @@
-
-
-// function input(){
-//     var storeInput = document.getElementById('store').value
-//     var minimumInput = document.getElementById('min').value
-//     var maximumInput = document.getElementById('max').value
-//     var avgInput = document.getElementById('avg').value
-//     totalCookies = 0;
-//     console.log(storeInput);
-// }
-
-//8/20
-    
-
+//need to find a way to clear form once new table gets pushed. 
 
 var randomGenerator = function (min, max, avgSale) {
     var random = Math.floor(Math.random() * (max)) + min;
     var PerHourTotal = random * avgSale;
     return parseInt(PerHourTotal);
 }
-    
-    
-    
-    openHours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm']
-    
-    var Store = function (storeName, minCust, maxCust, avgSale, totalCookies) {
-        this.store = storeName;//parameters dont get called until new objects get created. 
-        this.min = minCust;
-        this.max = maxCust;
-        this.avg = avgSale;
-        this.total = totalCookies;
-        this.header = function () {
-            // var table = document.getElementById(tableId);
-            var container = document.getElementById("tableId");
-            var newTable = document.createElement("table");
-            newTable.setAttribute("id", this.store);
-            
-            var row = document.createElement("tr");
-            var heading = document.createElement("th");
-            heading.setAttribute("colspan", "2");
-            heading.innerText = (this.store);
-            container.appendChild(newTable)
-            newTable.appendChild(row);
-            row.appendChild(heading);
-    
-        };
-        this.tableHours = function (idTable) {
-            for (i = 0; i < openHours.length; i++) {
-                //first were looping through hours array to create a column
-                var table = document.getElementById(idTable);
-                var row = document.createElement("tr");
-                var hour = document.createElement("td");
-                // container.appendChild(table);
-                table.appendChild(row);
-                hour.innerText = openHours[i];
-                row.appendChild(hour);
-                //cookies per hour
-                var cookiesPerHour = randomGenerator(this.min, this.max, this.avg);
-                this.total += cookiesPerHour;
-                var totalCookies = document.createElement("td");
-                totalCookies.innerText = cookiesPerHour;
-                row.appendChild(totalCookies);
-            }
-        };
-        this.totalrow = function (idTable) {
-            // var table = document.getElementById(tableId);
+
+openHours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm']
+
+var Store = function (storeName, minCust, maxCust, avgSale, totalCookies) {
+    this.store = storeName;//parameters dont get called until new objects get created. 
+    this.min = minCust;
+    this.max = maxCust;
+    this.avg = avgSale;
+    this.total = totalCookies;
+    this.header = function () {
+        // var table = document.getElementById(tableId);
+        var container = document.getElementById("tableId");
+        var newTable = document.createElement("table");
+        newTable.setAttribute("id", this.store);
+
+        var row = document.createElement("tr");
+        var heading = document.createElement("th");
+        heading.setAttribute("colspan", "2");
+        heading.innerText = (this.store);
+        container.appendChild(newTable)
+        newTable.appendChild(row);
+        row.appendChild(heading);
+
+    };
+    this.tableHours = function (idTable) {
+        for (i = 0; i < openHours.length; i++) {
+            //first were looping through hours array to create a column
             var table = document.getElementById(idTable);
-
             var row = document.createElement("tr");
-            var total = document.createElement("td");
+            var hour = document.createElement("td");
+            // container.appendChild(table);
             table.appendChild(row);
-            total.innerText = 'total';
-            row.appendChild(total);
-            //
-    
-    
+            hour.innerText = openHours[i];
+            row.appendChild(hour);
+            //cookies per hour
+            var cookiesPerHour = randomGenerator(this.min, this.max, this.avg);
+            this.total += cookiesPerHour;
             var totalCookies = document.createElement("td");
-            totalCookies.innerText = this.total;
+            totalCookies.innerText = cookiesPerHour;
             row.appendChild(totalCookies);
-    
-    
-    
         }
-    
-    }
-    
-    
-    
+    };
+    this.totalrow = function (idTable) {
+        // var table = document.getElementById(tableId);
+        var table = document.getElementById(idTable);
 
-function addButton(storeForm){
+        var row = document.createElement("tr");
+        var total = document.createElement("td");
+        table.appendChild(row);
+        total.innerText = 'total';
+        row.appendChild(total);
+        //
+
+
+        var totalCookies = document.createElement("td");
+        totalCookies.innerText = this.total;
+        row.appendChild(totalCookies);
+
+
+
+    }
+
+}
+//button which pushes new tables into the array which will then get looped.
+//1st get the values of each input
+//add the values to and push to stores array
+//call the function
+function addButton(storeForm) {
     var storeInput = storeForm.storeName.value;
     var maxInput = parseInt(storeForm.max.value);
     var minInput = parseInt(storeForm.min.value);
@@ -102,50 +87,65 @@ function addButton(storeForm){
 
 }
 
-    
-      
-    
-    
-    var stores = [];
-    //this is a new object
-    // stores.push(new Store('pioneer', 13, 33, 4.4, 0));
-    stores.push(new Store('waterfront', 6, 24, 1.2, 0));
-    stores.push(new Store('tigard', 20, 48, 3.3, 0));
-    stores.push(new Store('beaverton', 3, 24, 2.6, 0));
-    stores.push(new Store('alberta', 20, 48, 3.3, 0));
-    stores.push(new Store('lloyd', 20, 48, 3.3, 0));
+
+var stores = [];
+//this is a new object
+// stores.push(new Store('pioneer', 13, 33, 4.4, 0));
+stores.push(new Store('waterfront', 6, 24, 1.2, 0));
+stores.push(new Store('tigard', 20, 48, 3.3, 0));
+stores.push(new Store('beaverton', 3, 24, 2.6, 0));
+stores.push(new Store('alberta', 20, 48, 3.3, 0));
+stores.push(new Store('lloyd', 20, 48, 3.3, 0));
+
+var callId = function (storeObject) {
+    console.log(storeObject);
+    storeObject.header(storeObject.store);
+
+    storeObject.tableHours(storeObject.store);
+    storeObject.totalrow(storeObject.store);
+
+}
+
+for (index = 0; index < stores.length; index++) {
+    callId(stores[index]);
+
+}
 
 
 
-    var callId = function (storeObject) {
-        console.log(storeObject);
-        storeObject.header(storeObject.store);
-    
-        storeObject.tableHours(storeObject.store);
-        storeObject.totalrow(storeObject.store);
-    
-    }
-
-    for(index= 0; index < stores.length; index++){
-        callId(stores[index]);
-
-     }
 
 
-     
-    
+
+
+
+
+
+
+
+// ============================= Older Code =========================
+
+
+
+
+
+
+
+
+
+
+//before the for loop we had to call each store within the array!
     // callId(stores[0]);
     // callId(stores[1]);
     // callId(stores[2]);
     // callId(stores[3]);
     // callId(stores[4]);
     // callId(stores[5]);
-    
-    
-    
+
+
+
     //before creating linese 79-93 we had the below code to call out each section of the table now we are using the 
     //push method in the array. 
-    
+
 
 
 
@@ -222,7 +222,7 @@ function addButton(storeForm){
 //     heading.innerText= "Pioneer place";
 //     row.appendChild(heading);
 //     table.appendChild(row);
-    
+
 // },
 //     tableHours: function(){
 //         for( i = 0; i < pioneer.openHours.length; i++){
@@ -239,9 +239,9 @@ function addButton(storeForm){
 //             totalCookies.innerText = cookiesPerHour;
 //             row.appendChild(totalCookies);
 
-            
+
 //                 } 
-            
+
 //             },
 //     totalrow: function(){
 //         var table = document.getElementById('pioneer-list');
@@ -717,34 +717,24 @@ beaverton.header();
 beaverton.tableHours();
 beaverton.totalrow();
 */
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //=========================previous code====================================
-            
-
-            
-            
-                        
-
-
- 
-
-     
 
 
 
@@ -752,11 +742,21 @@ beaverton.totalrow();
 
 
 
-  
-               
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //gets teh TOTAL FROM the array, adding each number up
       /* toHTML: function() {
            var cookiesPerHour  = randomGenerator(pioneer.minCust, pioneer.maxCust, pioneer.avgSale) 
@@ -782,11 +782,11 @@ beaverton.totalrow();
       //
    // pioneer.pioneerList();
   // pioneer.cookiesPerHour();
-           
 
 
 
-    
+
+
 /*
     var waterFront ={
         minCust: 6,
@@ -983,10 +983,6 @@ beaverton.totalrow();
 
 
     */
-    
-
-
-     
 
 
 
@@ -998,16 +994,20 @@ beaverton.totalrow();
 
 
 
-        
-             
 
 
-       
 
-       
-        
-    
 
-        
-        
-    
+
+
+
+
+
+
+
+
+
+
+
+
+

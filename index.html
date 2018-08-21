@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,90 +32,66 @@
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         </div>
-    
-         <div class="container">
-                <h3 class="fishies">Local</h3>
-    
-                <h3 class="fishies midfish">Fresh</h3>
-    
-                <h3 class="fishies fish1">Organic</h3>
-         </div>
-            <!-- instead adding the images to a div just add them to the h3 below. -->
-        </section>
+        </div>
 
-        <section class="container" id="tableId">
-            <!-- <table class="graph" id="pioneer" border="1">
-            </table>
-    
-            <table class="graph" id="waterfront" border="1">
-            </table> -->
-    
-            <!-- <table class="graph" id="lloyd" border="1">
-            </table> -->
-    
-            <!-- <table class="graph" id="alberta" border="1">
-            </table>
-    
-            <table class="graph" id="tigard" border="1">
-            </table>
-    
-            <table class="graph" id="beaverton" border="1">
-            </table> -->
+        <div class="container">
+            <h3 class="fishies">Local</h3>
 
-            <!-- FOCUS ON THIS SECTION -->
+            <h3 class="fishies midfish">Fresh</h3>
 
-            <form>
-                <fieldset>
-                    <legend>Details</legend>
-                    <label>
-                        Store Name:
-                    </label>
-                    <input type="text" name="storeName" required="required">
+            <h3 class="fishies fish1">Organic</h3>
+        </div>
+        <!-- instead adding the images to a div just add them to the h3 below. -->
+    </section>
 
-                    <label>
-                        Minimum customers/hour
-                    </label>
-                    <input type="text" name="min" required="required" >
+    <section class="container" id="tableId">
+        <form>
+            <fieldset>
+                <legend>Details</legend>
+                <label>
+                    Store Name:
+                </label>
+                <input type="text" name="storeName" required="required">
 
-                    <label>
-                        Maximum Customers/hour:
-                    </label>
-                    <input type="text" name="max" required="required" >
-                    
-                    <label>
-                        Average Sale/customer: 
-                    </label>
-                    <input type="text" name="avg" required="required" >
+                <label>
+                    Minimum customers/hour
+                </label>
+                <input type="text" name="min" required="required">
 
-                    <button type="button" onclick="addButton(this.form)">Submit</button>
+                <label>
+                    Maximum Customers/hour:
+                </label>
+                <input type="text" name="max" required="required">
 
-                </fieldset>
-            </form>
-        </section>
-    
-        <section class="shop-container">
-            <h2 class="shop">shop</h2>
-    
-            <figure>
-                <figcaption>4-Friends</figcaption>
-                <img src="imgs/shirt.jpg" />
-            </figure>
-    
-            <figure>
-                <figcaption>4-Family</figcaption>
-                <img src="imgs/family.jpg" width="324" />
-            </figure>
-    
-            <figure>
-                <figcaption>4-Self</figcaption>
-                <img src="imgs/salmon.png" width="324" />
-            </figure>
-        </section>
-        <script type="text/javascript" src="script.js"></script>
-    
-    
-    </body>
-    </html>
+                <label>
+                    Average Sale/customer:
+                </label>
+                <input type="text" name="avg" required="required">
 
-    
+                <button type="button" onclick="addButton(this.form)">Submit</button>
+
+            </fieldset>
+        </form>
+    </section>
+
+    <section class="shop-container">
+        <h2 class="shop">shop</h2>
+
+        <figure>
+            <figcaption>4-Friends</figcaption>
+            <img src="imgs/shirt.jpg" />
+        </figure>
+
+        <figure>
+            <figcaption>4-Family</figcaption>
+            <img src="imgs/family.jpg" width="324" />
+        </figure>
+
+        <figure>
+            <figcaption>4-Self</figcaption>
+            <img src="imgs/salmon.png" width="324" />
+        </figure>
+    </section>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
