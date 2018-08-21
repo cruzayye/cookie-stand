@@ -45,24 +45,54 @@
             <!-- instead adding the images to a div just add them to the h3 below. -->
         </section>
 
-        <section class="container">
-            <table class="graph" id="pioneer" border="1">
+        <section class="container" id="tableId">
+            <!-- <table class="graph" id="pioneer" border="1">
             </table>
     
             <table class="graph" id="waterfront" border="1">
-            </table>
+            </table> -->
     
-            <table class="graph" id="lloyd" border="1">
-            </table>
+            <!-- <table class="graph" id="lloyd" border="1">
+            </table> -->
     
-            <table class="graph" id="alberta" border="1">
+            <!-- <table class="graph" id="alberta" border="1">
             </table>
     
             <table class="graph" id="tigard" border="1">
             </table>
     
             <table class="graph" id="beaverton" border="1">
-            </table>
+            </table> -->
+
+            <!-- FOCUS ON THIS SECTION -->
+
+            <form>
+                <fieldset>
+                    <legend>Details</legend>
+                    <label>
+                        Store Name:
+                    </label>
+                    <input type="text" name="storeName" required="required">
+
+                    <label>
+                        Minimum customers/hour
+                    </label>
+                    <input type="text" name="min" required="required" >
+
+                    <label>
+                        Maximum Customers/hour:
+                    </label>
+                    <input type="text" name="max" required="required" >
+                    
+                    <label>
+                        Average Sale/customer: 
+                    </label>
+                    <input type="text" name="avg" required="required" >
+
+                    <button type="button" onclick="addButton(this.form)">Submit</button>
+
+                </fieldset>
+            </form>
         </section>
     
         <section class="shop-container">

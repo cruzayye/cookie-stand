@@ -233,11 +233,14 @@ figure{
 }
 
 
-
+/* nth-last-type(2){
+    this would give you the second to last item
+} */
 figure:nth-of-type(3) img {
     background-color: white;
 }
 
+/*********** form ************/
 
 
 

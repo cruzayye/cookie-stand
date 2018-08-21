@@ -1,64 +1,151 @@
 
+
+// function input(){
+//     var storeInput = document.getElementById('store').value
+//     var minimumInput = document.getElementById('min').value
+//     var maximumInput = document.getElementById('max').value
+//     var avgInput = document.getElementById('avg').value
+//     totalCookies = 0;
+//     console.log(storeInput);
+// }
+
+//8/20
+    
+
+
 var randomGenerator = function (min, max, avgSale) {
     var random = Math.floor(Math.random() * (max)) + min;
     var PerHourTotal = random * avgSale;
     return parseInt(PerHourTotal);
 }
-
-openHours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm']
-
-var Store = function (storeName, minCust, maxCust, avgSale, totalCookies) {
-    this.store = storeName;//parameters dont get called until new objects get created. 
-    this.min = minCust;
-    this.max = maxCust;
-    this.avg = avgSale;
-    this.total = totalCookies;
-    this.header = function (tableId) {
-        var table = document.getElementById(tableId);
-        var row = document.createElement("tr");
-        var heading = document.createElement("th");
-        heading.setAttribute("colspan", "2");
-        heading.innerText = (storeName);
-        row.appendChild(heading);
-        table.appendChild(row);
-
-    };
-    this.tableHours = function (tableId) {
-        for (i = 0; i < openHours.length; i++) {
-            //first were looping through hours array to create a column
-            var table = document.getElementById(tableId);
+    
+    
+    
+    openHours = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm']
+    
+    var Store = function (storeName, minCust, maxCust, avgSale, totalCookies) {
+        this.store = storeName;//parameters dont get called until new objects get created. 
+        this.min = minCust;
+        this.max = maxCust;
+        this.avg = avgSale;
+        this.total = totalCookies;
+        this.header = function () {
+            // var table = document.getElementById(tableId);
+            var container = document.getElementById("tableId");
+            var newTable = document.createElement("table");
+            newTable.setAttribute("id", this.store);
+            
             var row = document.createElement("tr");
-            var hour = document.createElement("td");
+            var heading = document.createElement("th");
+            heading.setAttribute("colspan", "2");
+            heading.innerText = (this.store);
+            container.appendChild(newTable)
+            newTable.appendChild(row);
+            row.appendChild(heading);
+    
+        };
+        this.tableHours = function (idTable) {
+            for (i = 0; i < openHours.length; i++) {
+                //first were looping through hours array to create a column
+                var table = document.getElementById(idTable);
+                var row = document.createElement("tr");
+                var hour = document.createElement("td");
+                // container.appendChild(table);
+                table.appendChild(row);
+                hour.innerText = openHours[i];
+                row.appendChild(hour);
+                //cookies per hour
+                var cookiesPerHour = randomGenerator(this.min, this.max, this.avg);
+                this.total += cookiesPerHour;
+                var totalCookies = document.createElement("td");
+                totalCookies.innerText = cookiesPerHour;
+                row.appendChild(totalCookies);
+            }
+        };
+        this.totalrow = function (idTable) {
+            // var table = document.getElementById(tableId);
+            var table = document.getElementById(idTable);
+
+            var row = document.createElement("tr");
+            var total = document.createElement("td");
             table.appendChild(row);
-            hour.innerText = openHours[i];
-            row.appendChild(hour);
-            //cookies per hour
-            var cookiesPerHour = randomGenerator(this.min, this.max, this.avg);
-            this.total += cookiesPerHour;
+            total.innerText = 'total';
+            row.appendChild(total);
+            //
+    
+    
             var totalCookies = document.createElement("td");
-            totalCookies.innerText = cookiesPerHour;
+            totalCookies.innerText = this.total;
             row.appendChild(totalCookies);
+    
+    
+    
         }
-    };
-    this.totalrow = function (tableId) {
-        var table = document.getElementById(tableId);
-        var row = document.createElement("tr");
-        var total = document.createElement("td");
-        table.appendChild(row);
-        total.innerText = 'total';
-        row.appendChild(total);
-        //
+    
+    }
+    
+    
+    
+
+function addButton(storeForm){
+    var storeInput = storeForm.storeName.value;
+    var maxInput = parseInt(storeForm.max.value);
+    var minInput = parseInt(storeForm.min.value);
+    var avgInput = parseFloat(storeForm.avg.value);
+    // console.log(storeInput);
+    // console.log(maxInput);
+    // console.log(minInput);
+    // console.log(avgInput);
+    stores.push(new Store(storeInput, minInput, maxInput, avgInput, 0));
+    console.log(stores)
+    callId(stores[stores.length - 1]);
+
+}
+
+    
+      
+    
+    
+    var stores = [];
+    //this is a new object
+    // stores.push(new Store('pioneer', 13, 33, 4.4, 0));
+    stores.push(new Store('waterfront', 6, 24, 1.2, 0));
+    stores.push(new Store('tigard', 20, 48, 3.3, 0));
+    stores.push(new Store('beaverton', 3, 24, 2.6, 0));
+    stores.push(new Store('alberta', 20, 48, 3.3, 0));
+    stores.push(new Store('lloyd', 20, 48, 3.3, 0));
 
 
-        var totalCookies = document.createElement("td");
-        totalCookies.innerText = this.total;
-        row.appendChild(totalCookies);
 
-
-
+    var callId = function (storeObject) {
+        console.log(storeObject);
+        storeObject.header(storeObject.store);
+    
+        storeObject.tableHours(storeObject.store);
+        storeObject.totalrow(storeObject.store);
+    
     }
 
-}
+    for(index= 0; index < stores.length; index++){
+        callId(stores[index]);
+
+     }
+
+
+     
+    
+    // callId(stores[0]);
+    // callId(stores[1]);
+    // callId(stores[2]);
+    // callId(stores[3]);
+    // callId(stores[4]);
+    // callId(stores[5]);
+    
+    
+    
+    //before creating linese 79-93 we had the below code to call out each section of the table now we are using the 
+    //push method in the array. 
+    
 
 
 
@@ -66,41 +153,30 @@ var Store = function (storeName, minCust, maxCust, avgSale, totalCookies) {
 
 
 
-var stores = [];
-//this is a new object
-stores.push(new Store('pioneer', 13, 33, 4.4, 0));
-stores.push(new Store('waterfront', 6, 24, 1.2, 0));
-stores.push(new Store('tigard', 20, 48, 3.3, 0));
-stores.push(new Store('beaverton', 3, 24, 2.6, 0));
-stores.push(new Store('alberta', 20, 48, 3.3, 0));
-stores.push(new Store('lloyd', 20, 48, 3.3, 0));
-//calling the function within new object
-console.log(stores)
+// var stores = [];
+// //this is a new object
+// stores.push(new Store('pioneer', 13, 33, 4.4, 0));
+// stores.push(new Store('waterfront', 6, 24, 1.2, 0));
+// stores.push(new Store('tigard', 20, 48, 3.3, 0));
+// stores.push(new Store('beaverton', 3, 24, 2.6, 0));
+// stores.push(new Store('alberta', 20, 48, 3.3, 0));
+// stores.push(new Store('lloyd', 20, 48, 3.3, 0));
+// //calling the function within new object
+// console.log(stores)
 
-var callId = function (storeObject) {
-    console.log(storeObject);
-    storeObject.header(storeObject.store);
 
-    storeObject.tableHours(storeObject.store);
-    storeObject.totalrow(storeObject.store);
-
-}
-
-callId(stores[0]);
-callId(stores[1]);
-callId(stores[2]);
-callId(stores[3]);
-callId(stores[4]);
-callId(stores[5]);
+// callId(stores[0]);
+// callId(stores[1]);
+// callId(stores[2]);
+// callId(stores[3]);
+// callId(stores[4]);
+// callId(stores[5]);
 
 
 
 //before creating linese 79-93 we had the below code to call out each section of the table now we are using the 
 //push method in the array. 
 
-// for(i = 0; i < stores.length; i++){
-//    callId(stores[i]);
-// }
 
 
 // pioneer.header('pioneer');
