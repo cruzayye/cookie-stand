@@ -83,7 +83,7 @@ function addButton(storeForm) {
     // console.log(avgInput);
     stores.push(new Store(storeInput, minInput, maxInput, avgInput, 0));
     console.log(stores)
-    callId(stores[stores.length - 1]);
+    addTable(stores[stores.length - 1]);
 
 }
 
@@ -96,18 +96,19 @@ stores.push(new Store('tigard', 20, 48, 3.3, 0));
 stores.push(new Store('beaverton', 3, 24, 2.6, 0));
 stores.push(new Store('alberta', 20, 48, 3.3, 0));
 stores.push(new Store('lloyd', 20, 48, 3.3, 0));
-
-var callId = function (storeObject) {
-    console.log(storeObject);
+//this just calls the methods withing the constructor function
+//why do we need a parameter here if storeObject isn't directly linking to anything above??
+var addTable = function (storeObject) {
+    // console.log(storeObject);
     storeObject.header(storeObject.store);
 
     storeObject.tableHours(storeObject.store);
     storeObject.totalrow(storeObject.store);
 
 }
-
+//looping through the arrays so that we dont have to call each array mannually
 for (index = 0; index < stores.length; index++) {
-    callId(stores[index]);
+    addTable(stores[index]);
 
 }
 
